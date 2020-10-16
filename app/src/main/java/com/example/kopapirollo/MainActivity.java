@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.scissors
     };
 
+
+    Button btnKo, btnPapir, btnOllo;
+    TextView embipont, compipont;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
         img = findViewById(R.id.enKepem);
         gimg = findViewById(R.id.gepKepe);
 
-        Button btnKo = findViewById(R.id.btnKo);
-        Button btnPapir = findViewById(R.id.btnPapir);
-        Button btnOllo = findViewById(R.id.btnOllo);
-        TextView embipont = findViewById(R.id.emberEredmeny);
-        TextView compipont = findViewById(R.id.computerEredmeny);
+        btnKo = findViewById(R.id.btnKo);
+        btnPapir = findViewById(R.id.btnPapir);
+        btnOllo = findViewById(R.id.btnOllo);
+        embipont = findViewById(R.id.emberEredmeny);
+        compipont = findViewById(R.id.computerEredmeny);
 
         r = new Random();
 
@@ -64,16 +68,16 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
-                    jatekVege();
+
 
                 }
                 if (resource == R.drawable.scissors){
                     Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
-                    jatekVege();
-                }
 
+                }
+                jatekVege();
             }
 
 
@@ -91,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
-                    jatekVege();
+
                 }
                 if (resource == R.drawable.paper){
                     Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
@@ -100,9 +104,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
-                    jatekVege();
-                }
 
+                }
+                jatekVege();
 
             }
         });
@@ -118,27 +122,28 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
-                    jatekVege();
+
                 }
                 if (resource == R.drawable.paper){
                     Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
-                    jatekVege();
+
                 }
                 if (resource == R.drawable.scissors){
                     Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
                 }
-
+                jatekVege();
 
             }
         });
 
+
     }
 
     public void jatekVege() {
-        TextView embipont = findViewById(R.id.emberEredmeny);
-        TextView compipont = findViewById(R.id.computerEredmeny);
+        embipont = findViewById(R.id.emberEredmeny);
+        compipont = findViewById(R.id.computerEredmeny);
         if (emberPont == 3 || computerPont == 3){
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setMessage("Szeretne új játékot játszani?")
