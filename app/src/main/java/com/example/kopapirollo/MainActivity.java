@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -17,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     ImageView img;
     ImageView gimg;
     Random r;
+    int computerPont = 0;
+    int emberPont = 0;
+
     String dontetlen = "Döntetlen";
     String onNyert = "Ön nyert!";
     String onVesztett = "Ön veszett!";
@@ -37,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         Button btnKo = findViewById(R.id.btnKo);
         Button btnPapir = findViewById(R.id.btnPapir);
         Button btnOllo = findViewById(R.id.btnOllo);
+        TextView embipont = findViewById(R.id.emberEredmeny);
+        TextView compipont = findViewById(R.id.computerEredmeny);
 
         r = new Random();
 
@@ -53,9 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (resource == R.drawable.paper){
                     Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
+                    computerPont++;
+                    compipont.setText(String.valueOf(computerPont));
+
                 }
                 if (resource == R.drawable.scissors){
                     Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
+                    emberPont++;
+                    embipont.setText(String.valueOf(emberPont));
                 }
 
             }
@@ -73,12 +84,16 @@ public class MainActivity extends AppCompatActivity {
                 Integer resource = (Integer) gimg.getTag();
                 if (resource == R.drawable.rock){
                     Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
+                    emberPont++;
+                    embipont.setText(String.valueOf(emberPont));
                 }
                 if (resource == R.drawable.paper){
                     Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
                 }
                 if (resource == R.drawable.scissors){
                     Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
+                    computerPont++;
+                    compipont.setText(String.valueOf(computerPont));
                 }
 
             }
@@ -93,9 +108,13 @@ public class MainActivity extends AppCompatActivity {
                 Integer resource = (Integer) gimg.getTag();
                 if (resource == R.drawable.rock){
                     Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
+                    computerPont++;
+                    compipont.setText(String.valueOf(computerPont));
                 }
                 if (resource == R.drawable.paper){
                     Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
+                    emberPont++;
+                    embipont.setText(String.valueOf(emberPont));
                 }
                 if (resource == R.drawable.scissors){
                     Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
