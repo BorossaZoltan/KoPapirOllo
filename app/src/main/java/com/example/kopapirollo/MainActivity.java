@@ -1,7 +1,9 @@
 package com.example.kopapirollo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.media.Image;
 import android.media.ImageReader;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,12 +64,14 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
+                    jatekVege();
 
                 }
                 if (resource == R.drawable.scissors){
                     Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
+                    jatekVege();
                 }
 
             }
@@ -86,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
+                    jatekVege();
                 }
                 if (resource == R.drawable.paper){
                     Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
@@ -94,7 +100,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
+                    jatekVege();
                 }
+
 
             }
         });
@@ -110,20 +118,50 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
+                    jatekVege();
                 }
                 if (resource == R.drawable.paper){
                     Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
+                    jatekVege();
                 }
                 if (resource == R.drawable.scissors){
                     Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
                 }
 
+
             }
         });
 
+    }
 
+    public void jatekVege() {
+        TextView embipont = findViewById(R.id.emberEredmeny);
+        TextView compipont = findViewById(R.id.computerEredmeny);
+        if (emberPont == 3 || computerPont == 3){
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setMessage("Szeretne új játékot játszani?")
+                    .setPositiveButton("Igen", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            emberPont = 0;
+                            computerPont = 0;
+                            embipont.setText("0");
+                            compipont.setText("0");
+                            img.setImageResource(R.drawable.rock);
+                            gimg.setImageResource(R.drawable.rock);
 
+                        }
+                    }).setNegativeButton("Nem", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    System.exit(0);
+                }
+            });
+            AlertDialog alert = builder.create();
+            alert.show();
+
+        }
     }
 }
