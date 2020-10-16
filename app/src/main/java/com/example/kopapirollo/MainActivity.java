@@ -18,8 +18,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView img;
-    ImageView gimg;
+    ImageView img, gimg;
     Random r;
     int computerPont = 0;
     int emberPont = 0;
