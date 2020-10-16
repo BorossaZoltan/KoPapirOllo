@@ -18,7 +18,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView img, gimg;
+    ImageView img, gimg, gt1, gt2, gt3, jt1, jt2, jt3;
     Random r;
     int computerPont = 0;
     int emberPont = 0;
@@ -44,6 +44,14 @@ public class MainActivity extends AppCompatActivity {
 
         img = findViewById(R.id.enKepem);
         gimg = findViewById(R.id.gepKepe);
+        gt1 = findViewById(R.id.gepSziv1);
+        gt2 = findViewById(R.id.gepSziv2);
+        gt3 = findViewById(R.id.gepSziv3);
+        jt1 = findViewById(R.id.jatekosSziv1);
+        jt2 = findViewById(R.id.jatekosSziv2);
+        jt3 = findViewById(R.id.jatekosSziv3);
+
+
 
         btnKo = findViewById(R.id.btnKo);
         btnPapir = findViewById(R.id.btnPapir);
@@ -73,7 +81,15 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
-
+                    if (computerPont == 1){
+                        jt1.setImageResource(R.drawable.heart1);
+                    }
+                    if (computerPont == 2){
+                        jt2.setImageResource(R.drawable.heart1);
+                    }
+                    if (computerPont == 3){
+                        jt3.setImageResource(R.drawable.heart1);
+                    }
 
                 }
                 if (resource == R.drawable.scissors){
@@ -81,7 +97,15 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
-
+                    if (emberPont == 1){
+                        gt1.setImageResource(R.drawable.heart1);
+                    }
+                    if (emberPont == 2){
+                        gt2.setImageResource(R.drawable.heart1);
+                    }
+                    if (emberPont == 3){
+                        gt3.setImageResource(R.drawable.heart1);
+                    }
                 }
                 jatekVege();
             }
@@ -102,6 +126,15 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
+                    if (emberPont == 1){
+                        gt1.setImageResource(R.drawable.heart1);
+                    }
+                    if (emberPont == 2){
+                        gt2.setImageResource(R.drawable.heart1);
+                    }
+                    if (emberPont == 3){
+                        gt3.setImageResource(R.drawable.heart1);
+                    }
 
                 }
                 if (resource == R.drawable.paper){
@@ -115,6 +148,15 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
+                    if (computerPont == 1){
+                        jt1.setImageResource(R.drawable.heart1);
+                    }
+                    if (computerPont == 2){
+                        jt2.setImageResource(R.drawable.heart1);
+                    }
+                    if (computerPont == 3){
+                        jt3.setImageResource(R.drawable.heart1);
+                    }
 
                 }
                 jatekVege();
@@ -134,6 +176,15 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
+                    if (computerPont == 1){
+                        jt1.setImageResource(R.drawable.heart1);
+                    }
+                    if (computerPont == 2){
+                        jt2.setImageResource(R.drawable.heart1);
+                    }
+                    if (computerPont == 3){
+                        jt3.setImageResource(R.drawable.heart1);
+                    }
 
                 }
                 if (resource == R.drawable.paper){
@@ -141,6 +192,15 @@ public class MainActivity extends AppCompatActivity {
                     //Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
+                    if (emberPont == 1){
+                        gt1.setImageResource(R.drawable.heart1);
+                    }
+                    if (emberPont == 2){
+                        gt2.setImageResource(R.drawable.heart1);
+                    }
+                    if (emberPont == 3){
+                        gt3.setImageResource(R.drawable.heart1);
+                    }
 
                 }
                 if (resource == R.drawable.scissors){
@@ -168,10 +228,18 @@ public class MainActivity extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which) {
                             emberPont = 0;
                             computerPont = 0;
+                            dontetlenPont = 0;
+                            dontetlenpont.setText("0");
                             embipont.setText("0");
                             compipont.setText("0");
                             img.setImageResource(R.drawable.rock);
                             gimg.setImageResource(R.drawable.rock);
+                            gt1.setImageResource(R.drawable.heart2);
+                            gt2.setImageResource(R.drawable.heart2);
+                            gt3.setImageResource(R.drawable.heart2);
+                            jt1.setImageResource(R.drawable.heart2);
+                            jt2.setImageResource(R.drawable.heart2);
+                            jt3.setImageResource(R.drawable.heart2);
 
                         }
                     }).setNegativeButton("Nem", new DialogInterface.OnClickListener() {
@@ -182,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
             });
             AlertDialog alert = builder.create();
             alert.show();
+            alert.setCanceledOnTouchOutside(false);
 
         }
     }
