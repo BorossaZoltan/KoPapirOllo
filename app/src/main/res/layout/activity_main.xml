@@ -107,7 +107,7 @@
             android:layout_gravity="center">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnKo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -117,7 +117,7 @@
                 app:iconTint="#BFBCBC" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnPapir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -127,7 +127,7 @@
                 app:iconTint="#BFBCBC" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnOllo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
