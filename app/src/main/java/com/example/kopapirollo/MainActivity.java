@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     Random r;
     int computerPont = 0;
     int emberPont = 0;
+    int dontetlenPont = 0;
 
     String dontetlen = "Döntetlen";
     String onNyert = "Ön nyert!";
