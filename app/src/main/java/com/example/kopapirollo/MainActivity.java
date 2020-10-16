@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button btnKo, btnPapir, btnOllo;
-    TextView embipont, compipont;
+    TextView embipont, compipont, dontetlenpont;
     Toast toast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         btnOllo = findViewById(R.id.btnOllo);
         embipont = findViewById(R.id.emberEredmeny);
         compipont = findViewById(R.id.computerEredmeny);
+        dontetlenpont = findViewById(R.id.dontetlenEredmeny);
 
         r = new Random();
 
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 Integer resource = (Integer) gimg.getTag();
                 if (resource == R.drawable.rock){
                     toastMethod(dontetlen);
+                    dontetlenPont++;
+                    dontetlenpont.setText(String.valueOf(dontetlenPont));
                     //Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
                 }
                 if (resource == R.drawable.paper){
@@ -104,6 +107,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (resource == R.drawable.paper){
                     toastMethod(dontetlen);
+                    dontetlenPont++;
+                    dontetlenpont.setText(String.valueOf(dontetlenPont));
                     //Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
                 }
                 if (resource == R.drawable.scissors){
@@ -141,6 +146,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (resource == R.drawable.scissors){
                     toastMethod(dontetlen);
+                    dontetlenPont++;
+                    dontetlenpont.setText(String.valueOf(dontetlenPont));
                     //Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
                 }
                 jatekVege();
