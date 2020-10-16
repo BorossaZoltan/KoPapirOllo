@@ -3,10 +3,12 @@ package com.example.kopapirollo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.media.Image;
+import android.media.ImageReader;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -15,7 +17,9 @@ public class MainActivity extends AppCompatActivity {
     ImageView img;
     ImageView gimg;
     Random r;
-
+    String dontetlen = "Döntetlen";
+    String onNyert = "Ön nyert!";
+    String onVesztett = "Ön veszett!";
     Integer[] kepek = {
             R.drawable.rock,
             R.drawable.paper,
@@ -40,7 +44,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 img.setImageResource(R.drawable.rock);
-                gimg.setImageResource(kepek[r.nextInt(kepek.length)]);
+                int randomGeneralt = r.nextInt(kepek.length);
+                gimg.setImageResource(kepek[randomGeneralt]);
+                gimg.setTag(kepek[randomGeneralt]);
+                Integer resource = (Integer) gimg.getTag();
+                if (resource == R.drawable.rock){
+                    Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
+                }
+                if (resource == R.drawable.paper){
+                    Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
+                }
+                if (resource == R.drawable.scissors){
+                    Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
+                }
+
             }
 
 
@@ -50,7 +67,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 img.setImageResource(R.drawable.paper);
-                gimg.setImageResource(kepek[r.nextInt(kepek.length)]);
+                int randomGeneralt = r.nextInt(kepek.length);
+                gimg.setImageResource(kepek[randomGeneralt]);
+                gimg.setTag(kepek[randomGeneralt]);
+                Integer resource = (Integer) gimg.getTag();
+                if (resource == R.drawable.rock){
+                    Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
+                }
+                if (resource == R.drawable.paper){
+                    Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
+                }
+                if (resource == R.drawable.scissors){
+                    Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -58,7 +87,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 img.setImageResource(R.drawable.scissors);
-                gimg.setImageResource(kepek[r.nextInt(kepek.length)]);
+                int randomGeneralt = r.nextInt(kepek.length);
+                gimg.setImageResource(kepek[randomGeneralt]);
+                gimg.setTag(kepek[randomGeneralt]);
+                Integer resource = (Integer) gimg.getTag();
+                if (resource == R.drawable.rock){
+                    Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
+                }
+                if (resource == R.drawable.paper){
+                    Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
+                }
+                if (resource == R.drawable.scissors){
+                    Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
