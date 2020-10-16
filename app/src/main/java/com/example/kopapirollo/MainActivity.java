@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     toastMethod(onVesztett);
                     //Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
-                    compipont.setText(String.valueOf(computerPont));
+                    //compipont.setText(String.valueOf(computerPont));
                     if (computerPont == 1){
                         jt1.setImageResource(R.drawable.heart1);
                     }
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     toastMethod(onNyert);
                     //Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
-                    embipont.setText(String.valueOf(emberPont));
+                    //embipont.setText(String.valueOf(emberPont));
                     if (emberPont == 1){
                         gt1.setImageResource(R.drawable.heart1);
                     }
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                     toastMethod(onNyert);
                     //Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
-                    embipont.setText(String.valueOf(emberPont));
+                   //embipont.setText(String.valueOf(emberPont));
                     if (emberPont == 1){
                         gt1.setImageResource(R.drawable.heart1);
                     }
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
                     toastMethod(onVesztett);
                     //Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
-                    compipont.setText(String.valueOf(computerPont));
+                    //compipont.setText(String.valueOf(computerPont));
                     if (computerPont == 1){
                         jt1.setImageResource(R.drawable.heart1);
                     }
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                     toastMethod(onVesztett);
                     //Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
-                    compipont.setText(String.valueOf(computerPont));
+                    //compipont.setText(String.valueOf(computerPont));
                     if (computerPont == 1){
                         jt1.setImageResource(R.drawable.heart1);
                     }
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
                     toastMethod(onNyert);
                     //Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
-                    embipont.setText(String.valueOf(emberPont));
+                    //embipont.setText(String.valueOf(emberPont));
                     if (emberPont == 1){
                         gt1.setImageResource(R.drawable.heart1);
                     }
@@ -230,8 +230,8 @@ public class MainActivity extends AppCompatActivity {
                             computerPont = 0;
                             dontetlenPont = 0;
                             dontetlenpont.setText("0");
-                            embipont.setText("0");
-                            compipont.setText("0");
+                            //embipont.setText("0");
+                            //compipont.setText("0");
                             img.setImageResource(R.drawable.rock);
                             gimg.setImageResource(R.drawable.rock);
                             gt1.setImageResource(R.drawable.heart2);
