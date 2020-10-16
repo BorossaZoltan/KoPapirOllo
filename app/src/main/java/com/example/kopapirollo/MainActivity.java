@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnKo, btnPapir, btnOllo;
     TextView embipont, compipont;
-
+    Toast toast;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,17 +62,20 @@ public class MainActivity extends AppCompatActivity {
                 gimg.setTag(kepek[randomGeneralt]);
                 Integer resource = (Integer) gimg.getTag();
                 if (resource == R.drawable.rock){
-                    Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
+                    toastMethod(dontetlen);
+                    //Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
                 }
                 if (resource == R.drawable.paper){
-                    Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
+                    toastMethod(onVesztett);
+                    //Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
 
 
                 }
                 if (resource == R.drawable.scissors){
-                    Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
+                    toastMethod(onNyert);
+                    //Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
 
@@ -92,16 +95,19 @@ public class MainActivity extends AppCompatActivity {
                 gimg.setTag(kepek[randomGeneralt]);
                 Integer resource = (Integer) gimg.getTag();
                 if (resource == R.drawable.rock){
-                    Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
+                    toastMethod(onNyert);
+                    //Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
 
                 }
                 if (resource == R.drawable.paper){
-                    Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
+                    toastMethod(dontetlen);
+                    //Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
                 }
                 if (resource == R.drawable.scissors){
-                    Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
+                    toastMethod(onVesztett);
+                    //Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
 
@@ -119,19 +125,22 @@ public class MainActivity extends AppCompatActivity {
                 gimg.setTag(kepek[randomGeneralt]);
                 Integer resource = (Integer) gimg.getTag();
                 if (resource == R.drawable.rock){
-                    Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
+                    toastMethod(onVesztett);
+                    //Toast.makeText(getApplicationContext(), onVesztett, Toast.LENGTH_SHORT).show();
                     computerPont++;
                     compipont.setText(String.valueOf(computerPont));
 
                 }
                 if (resource == R.drawable.paper){
-                    Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
+                    toastMethod(onNyert);
+                    //Toast.makeText(getApplicationContext(), onNyert, Toast.LENGTH_SHORT).show();
                     emberPont++;
                     embipont.setText(String.valueOf(emberPont));
 
                 }
                 if (resource == R.drawable.scissors){
-                    Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
+                    toastMethod(dontetlen);
+                    //Toast.makeText(getApplicationContext(), dontetlen, Toast.LENGTH_SHORT).show();
                 }
                 jatekVege();
 
@@ -168,5 +177,12 @@ public class MainActivity extends AppCompatActivity {
             alert.show();
 
         }
+    }
+    public void toastMethod(String message){
+        if (toast != null) {
+            toast.cancel();
+        }
+        toast = Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG);
+        toast.show();
     }
 }
